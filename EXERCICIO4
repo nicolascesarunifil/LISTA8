@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class EXERCICO4 {
+    //4. Leia uma matriz 4 x 4, imprima a matriz e retorne à localização (linha e a coluna) do maior  valor.
+
+    public static void main(String[] args) {
+        int[][] num = new int[4][4];
+        int ii=0, jj=0,maior=0;
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < num.length; i++) {
+            for (int j = 0; j < num.length; j++) {
+                System.out.print("informe o numero da matriz " + (i + 1) + "-" + (j + 1) + " -> ");
+                num[i][j] = scanner.nextInt();
+            }
+        }
+        for (int i = 0; i < num.length; i++) {
+            System.out.println("");
+            for (int j = 0; j < num.length; j++) {
+                System.out.print(" - "+num[i][j]+" - ");
+            }
+        }
+        for (int i = 0; i < num.length; i++) {
+            for (int j = 0; j < num.length; j++) {
+                if(num[i][j] > maior){
+                    ii = i;
+                    jj = j;
+                    maior = num[i][j];
+                }
+            }
+        }
+        System.out.println("");
+        System.out.println("maior numero e o  "+maior+" esta na linha "+(ii+1)+" coluna "+(jj+1));
+    }
+}
